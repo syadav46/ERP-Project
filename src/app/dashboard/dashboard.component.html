@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="navbar navbar-inverse">
+      <div class="container-fluid">
+      <div class="navbar-header">
+         <button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a href routerLink="/dashboard" class="navbar-brand">
+          Dashboard
+           </a>
+           <a href routerLink="/new" class="navbar-brand">
+            New
+             </a>
+
+      <div class="navbar-collapse collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li>
+             <a class="myIcon" (click)="onLogout()"><i class="fas fa-sign-out-alt"></i>Logout</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+   </div>
+
+

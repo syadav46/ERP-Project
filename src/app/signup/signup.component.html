@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <form #signup="ngForm" (ngSubmit)="onSignup(signup.value)">
+        <legend>ERP SYSTEM SIGNUP</legend>
+        <div class="form-group">
+          <label for="username">USER NAME</label>
+          <input type="email" class="form-control" name="email" id="email"  #email="ngModel" ngModel required >
+        </div>
+
+        <div class="form-group">
+          <label for="password">PASSWORD</label>
+          <input type="password" name="password" id="password" class="form-control"  #password="ngModel" ngModel required>
+        </div>
+
+        <div class="form-group">
+          <label for="conpassword">CONFIRM PASSWORD</label>
+          <input type="password" name="conpassword" id="conpassword" class="form-control"  #conpassword="ngModel" ngModel required (keyup)="onPasswordValidate(signup.value)">
+          <span *ngIf="matched" class="help-block text-success"><i class="fas fa-check-circle"></i>Password are matched</span>
+          <span *ngIf="notMatched" class="help-block text-danger"><i class="fas fa-times-circle"></i>Password are not matched</span>
+        </div>
+
+        <div class="form-group">
+          <div class="btn-group">
+            <input type="submit" value="signup" class="btn btn-info" [disabled]="!matched">
+            <a title="Register now" href routerLink="/login" class="btn btn-link">login</a>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
